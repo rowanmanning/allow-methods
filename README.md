@@ -4,7 +4,7 @@ Allow-Methods
 
 Express/connect middleware to handle 405 errors, when a request method is not supported by your route or application.
 
-**Current Version:** *0.0.0*  
+**Current Version:** *1.0.0*  
 **Node Support:** *0.10.x, 0.11.x*  
 **License:** [MIT][mit]  
 **Build Status:** [![Build Status][travis-img]][travis]
