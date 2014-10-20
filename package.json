@@ -1,0 +1,36 @@
+{
+    "name": "allow-methods",
+    "version": "0.0.0",
+    "private": "true",
+
+    "description": "Express/connect middleware to handle 405 errors",
+    "keywords": [ "405", "connect", "error", "express", "http", "middleware" ],
+    "author": "Rowan Manning (http://rowanmanning.com/)",
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rowanmanning/allow-methods.git"
+    },
+    "homepage": "https://github.com/rowanmanning/allow-methods",
+    "bugs": "https://github.com/rowanmanning/allow-methods/issues",
+    "license": "MIT",
+
+    "engines": {
+        "node": ">=0.10"
+    },
+    "dependencies": {
+        "http-errors": "~1.2"
+    },
+    "devDependencies": {
+        "jshint": "~2.5",
+        "mocha": "~1.21",
+        "mockery": "~1.4",
+        "proclaim": "~2.0",
+        "sinon": "~1.10"
+    },
+
+    "main": "./lib/allow-methods.js",
+    "scripts": {
+        "test": "make test"
+    }
+}
