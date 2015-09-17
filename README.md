@@ -4,10 +4,11 @@ Allow-Methods
 
 Express/connect middleware to handle 405 errors, when a request method is not supported by your route or application.
 
-**Current Version:** *1.0.0*  
-**Node Support:** *0.10.x, 0.11.x*  
-**License:** [MIT][mit]  
-**Build Status:** [![Build Status][travis-img]][travis]
+[![NPM version][shield-npm]][info-npm]
+[![Node.js version support][shield-node]][info-node]
+[![Build status][shield-build]][info-build]
+[![Dependencies][shield-dependencies]][info-dependencies]
+[![MIT licensed][shield-license]][info-license]
 
 
 Install
@@ -84,19 +85,27 @@ To contribute to Allow-Methods, clone this repo locally and commit your code on 
 Please write unit tests for your code, and check that everything works by running the following before opening a pull-request:
 
 ```sh
-make lint test
+make ci
 ```
 
 
 License
 -------
 
-Allow-Methods is licensed under the [MIT][mit] license.  
-Copyright &copy; 2014, Rowan Manning
+Allow-Methods is licensed under the [MIT][info-license] license.  
+Copyright &copy; 2015, Rowan Manning
 
 
 
-[mit]: LICENSE
 [npm]: https://npmjs.org/
-[travis]: https://travis-ci.org/rowanmanning/allow-methods
-[travis-img]: https://travis-ci.org/rowanmanning/allow-methods.svg?branch=master
+
+[info-dependencies]: https://gemnasium.com/rowanmanning/allow-methods
+[info-license]: LICENSE
+[info-node]: package.json
+[info-npm]: https://www.npmjs.com/package/allow-methods
+[info-build]: https://travis-ci.org/rowanmanning/allow-methods
+[shield-dependencies]: https://img.shields.io/gemnasium/rowanmanning/allow-methods.svg
+[shield-license]: https://img.shields.io/badge/license-MIT-blue.svg
+[shield-node]: https://img.shields.io/badge/node.js%20support-0.10–0.12-brightgreen.svg
+[shield-npm]: https://img.shields.io/npm/v/allow-methods.svg
+[shield-build]: https://img.shields.io/travis/rowanmanning/allow-methods/master.svg
