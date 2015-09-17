@@ -1,5 +1,5 @@
-/* jshint maxstatements: false, maxlen: false */
-/* global afterEach, beforeEach, describe, it */
+// jshint maxstatements: false
+// jscs:disable maximumLineLength, disallowMultipleVarDecl
 'use strict';
 
 var assert = require('proclaim');
@@ -39,7 +39,7 @@ describe('allow-methods', function () {
 
         beforeEach(function () {
             request = {
-                method: 'foo',
+                method: 'foo'
             };
             response = {
                 header: sinon.spy()

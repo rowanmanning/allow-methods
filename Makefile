@@ -13,9 +13,17 @@ deps:
 	@npm install
 
 # Lint JavaScript
-lint:
+lint: jshint jscs
+
+# Run JSHint
+jshint:
 	@echo "$(C_CYAN)> linting javascript$(C_RESET)"
-	@./node_modules/.bin/jshint . --exclude node_modules --config .jshintrc
+	@./node_modules/.bin/jshint .
+
+# Run JavaScript Code Style
+jscs:
+	@echo "$(C_CYAN)> checking javascript code style$(C_RESET)"
+	@./node_modules/.bin/jscs .
 
 # Run tests
 test:
