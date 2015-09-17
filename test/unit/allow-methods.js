@@ -18,7 +18,7 @@ describe('allow-methods', function () {
         error405 = {status: 405};
         httpError = sinon.stub().returns(error405);
         mockery.registerMock('http-errors', httpError);
-        allowMethods = require('../lib/allow-methods');
+        allowMethods = require('../../lib/allow-methods');
     });
 
     afterEach(function () {
