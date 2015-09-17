@@ -1,5 +1,5 @@
-/* jshint maxstatements: false, maxlen: false */
-/* global afterEach, beforeEach, describe, it */
+// jshint maxstatements: false
+// jscs:disable maximumLineLength, disallowMultipleVarDecl
 'use strict';
 
 var assert = require('proclaim');
@@ -18,7 +18,7 @@ describe('allow-methods', function () {
         error405 = {status: 405};
         httpError = sinon.stub().returns(error405);
         mockery.registerMock('http-errors', httpError);
-        allowMethods = require('../lib/allow-methods');
+        allowMethods = require('../../lib/allow-methods');
     });
 
     afterEach(function () {
@@ -39,7 +39,7 @@ describe('allow-methods', function () {
 
         beforeEach(function () {
             request = {
-                method: 'foo',
+                method: 'foo'
             };
             response = {
                 header: sinon.spy()
