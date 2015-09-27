@@ -7,6 +7,7 @@ Express/connect middleware to handle 405 errors, when a request method is not su
 [![NPM version][shield-npm]][info-npm]
 [![Node.js version support][shield-node]][info-node]
 [![Build status][shield-build]][info-build]
+[![Code coverage][shield-coverage]][info-coverage]
 [![Dependencies][shield-dependencies]][info-dependencies]
 [![MIT licensed][shield-license]][info-license]
 
@@ -99,11 +100,13 @@ Copyright &copy; 2015, Rowan Manning
 
 [npm]: https://npmjs.org/
 
+[info-coverage]: https://coveralls.io/github/rowanmanning/allow-methods
 [info-dependencies]: https://gemnasium.com/rowanmanning/allow-methods
 [info-license]: LICENSE
 [info-node]: package.json
 [info-npm]: https://www.npmjs.com/package/allow-methods
 [info-build]: https://travis-ci.org/rowanmanning/allow-methods
+[shield-coverage]: https://img.shields.io/coveralls/rowanmanning/allow-methods.svg
 [shield-dependencies]: https://img.shields.io/gemnasium/rowanmanning/allow-methods.svg
 [shield-license]: https://img.shields.io/badge/license-MIT-blue.svg
 [shield-node]: https://img.shields.io/badge/node.js%20support-0.10–4-brightgreen.svg
