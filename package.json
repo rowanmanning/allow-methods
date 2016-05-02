@@ -1,6 +1,6 @@
 {
     "name": "allow-methods",
-    "version": "1.0.2",
+    "version": "1.0.3",
 
     "description": "Express/connect middleware to handle 405 errors",
     "keywords": [ "405", "connect", "error", "express", "http", "middleware" ],

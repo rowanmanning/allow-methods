@@ -1,6 +1,10 @@
 
 # Changelog
 
+## 1.0.3 (2016-05-02)
+
+  * Add Node.js 6.x support
+
 ## 1.0.2 (2016-01-09)
 
   * Add Node.js 5.x support
