@@ -22,17 +22,17 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "http-errors": "~1.3"
+    "http-errors": "^1.6.2"
   },
   "devDependencies": {
     "@rowanmanning/eslint-config": "^1.0.0",
     "@rowanmanning/make": "^1.0.0",
     "eslint": "^4.9.0",
-    "mocha": "^2",
-    "mockery": "~1.4",
+    "mocha": "^4.0.1",
+    "mockery": "^2.1.0",
     "nyc": "^11.2.1",
-    "proclaim": "^3",
-    "sinon": "^1"
+    "proclaim": "^3.5.0",
+    "sinon": "^4.0.1"
   },
   "main": "./lib/allow-methods.js",
   "scripts": {
