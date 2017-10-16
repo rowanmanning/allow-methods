@@ -90,6 +90,21 @@ make ci
 ```
 
 
+Support and Migration
+---------------------
+
+Allow Methods major versions are normally supported for 6 months after their last minor release. This means that patch-level changes will be added and bugs will be fixed. The table below outlines the end-of-support dates for major versions, and the last minor release for that version.
+
+We also maintain a [migration guide](MIGRATION.md) to help you migrate.
+
+| :grey_question: | Major Version   | Last Minor Release | Node.js Versions | Support End Date |
+| :-------------- | :-------------- | :----------------- | :--------------- | :--------------- |
+| :heart:         | 2               | N/A                | 4+               | N/A              |
+| :hourglass:     | [1][1.x-branch] | 1.0                | 0.10–7           | 2018-04-16       |
+
+If you're opening issues related to these, please mention the version that the issue relates to.
+
+
 License
 -------
 
@@ -98,6 +113,7 @@ Copyright &copy; 2015, Rowan Manning
 
 
 
+[1.x-branch]: https://github.com/rowanmanning/allow-methods/tree/1.x
 [npm]: https://npmjs.org/
 
 [info-coverage]: https://coveralls.io/github/rowanmanning/allow-methods
