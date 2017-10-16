@@ -19,7 +19,7 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10"
+    "node": ">=4"
   },
   "dependencies": {
     "http-errors": "^1.6.2"

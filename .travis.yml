@@ -5,17 +5,22 @@ matrix:
   include:
 
     # Run linter once
+
     - node_js: '8'
       env: LINT=true
 
-    # Run tests
-    - node_js: '0.10'
-    - node_js: '0.12'
+    # Run tests with varying Node.js versions
+
     - node_js: '4'
+      env: NODE=4
+
     - node_js: '6'
+      env: NODE=6
+
     - node_js: '8'
+      env: NODE=8
 
 # Build script
 script:
   - 'if [ $LINT ]; then make verify; fi'
-  - 'if [ ! $LINT ]; then make test; fi'
+  - 'if [ $NODE ]; then make test; fi'
