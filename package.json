@@ -32,7 +32,7 @@
     "mockery": "^2.1.0",
     "nyc": "^11.2.1",
     "proclaim": "^3.5.0",
-    "sinon": "^4.0.1"
+    "sinon": "^11.1.0"
   },
   "main": "./lib/allow-methods.js",
   "scripts": {
