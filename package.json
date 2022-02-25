@@ -10,7 +10,7 @@
     "http",
     "middleware"
   ],
-  "author": "Rowan Manning (http://rowanmanning.com/)",
+  "author": "Rowan Manning (https://rowanmanning.com/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/rowanmanning/allow-methods.git"
@@ -19,23 +19,37 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": ">=4"
+    "node": ">=12",
+    "npm": ">=7"
+  },
+  "scripts": {
+    "test": "npm run test:coverage",
+    "verify": "eslint .",
+    "test:unit": "mocha 'test/unit/**/*.test.js'",
+    "test:coverage": "nyc npm run test:unit",
+    "project:verify": "npx --yes @rowanmanning/validate-project --type git node-library",
+    "project:fix": "npx --yes @rowanmanning/validate-project --type git node-library --fix"
   },
   "dependencies": {
-    "http-errors": "^1.6.2"
+    "http-errors": "^2.0.0"
   },
   "devDependencies": {
-    "@rowanmanning/eslint-config": "^1.0.0",
-    "@rowanmanning/make": "^1.0.0",
-    "eslint": "^4.9.0",
-    "mocha": "^4.0.1",
-    "mockery": "^2.1.0",
-    "nyc": "^11.2.1",
-    "proclaim": "^3.5.0",
-    "sinon": "^4.0.1"
+    "@rowanmanning/eslint-config": "^3.3.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.9.0",
+    "mocha": "^9.2.1",
+    "nyc": "^15.1.0",
+    "testdouble": "^3.16.4"
   },
-  "main": "./lib/allow-methods.js",
-  "scripts": {
-    "test": "make test"
+  "main": "lib/allow-methods.js",
+  "nyc": {
+    "eager": true,
+    "reporter": [
+      "html",
+      "text"
+    ]
+  },
+  "mocha": {
+    "timeout": 10000
   }
 }
