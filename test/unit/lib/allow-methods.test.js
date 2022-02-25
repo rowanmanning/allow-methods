@@ -72,16 +72,16 @@ describe('lib/allow-methods', () => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
 						assert.strictEqual(error, error405);
-						td.verify(httpError(405, undefined), {times: 1});
+						td.verify(httpError(405, 'Method Not Allowed'), {times: 1});
 						done();
 					});
 				});
 
 				it('calls back with a 405 error with a custom message if specified', done => {
 					request.method = 'BAZ';
-					allowMethods(['FOO', 'bar'], 'foo')(request, response, error => {
+					allowMethods(['FOO', 'bar'], 'mock message')(request, response, error => {
 						assert.strictEqual(error, error405);
-						td.verify(httpError(405, 'foo'), {times: 1});
+						td.verify(httpError(405, 'mock message'), {times: 1});
 						done();
 					});
 				});

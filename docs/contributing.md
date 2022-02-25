@@ -58,3 +58,13 @@ You can run tests manually with the following command:
 ```
 npm run test:unit
 ```
+
+### Integration tests
+
+This project has end to end integration tests, and these tests can fail the build on PRs. If you add or remove features, please update the tests to match.
+
+You can run integration tests manually with the following command:
+
+```
+npm run test:integration
+```

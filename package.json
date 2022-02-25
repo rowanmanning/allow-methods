@@ -23,10 +23,11 @@
     "npm": ">=7"
   },
   "scripts": {
-    "test": "npm run test:coverage",
+    "test": "npm run test:coverage && npm run test:integration",
     "verify": "eslint .",
     "test:unit": "mocha 'test/unit/**/*.test.js'",
     "test:coverage": "nyc npm run test:unit",
+    "test:integration": "mocha 'test/integration/**/*.test.js'",
     "project:verify": "npx --yes @rowanmanning/validate-project --type git node-library",
     "project:fix": "npx --yes @rowanmanning/validate-project --type git node-library --fix"
   },
@@ -35,8 +36,11 @@
   },
   "devDependencies": {
     "@rowanmanning/eslint-config": "^3.3.0",
+    "axios": "^0.26.0",
     "chai": "^4.3.6",
     "eslint": "^8.9.0",
+    "express4": "npm:express@^4.17.3",
+    "express5": "npm:express@^5.0.0-beta.1",
     "mocha": "^9.2.1",
     "nyc": "^15.1.0",
     "testdouble": "^3.16.4"
