@@ -16,7 +16,7 @@ Express/connect middleware to handle 405 errors, when a request method is not su
 
 This library requires the following to run:
 
-  * [Node.js](https://nodejs.org/) 12+
+  * [Node.js](https://nodejs.org/) 14+
 
 
 ## Usage

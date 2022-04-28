@@ -19,8 +19,8 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": ">=12",
-    "npm": ">=7"
+    "node": ">=14",
+    "npm": ">=8"
   },
   "scripts": {
     "test": "npm run test:coverage && npm run test:integration",
