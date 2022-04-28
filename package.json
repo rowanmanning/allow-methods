@@ -28,19 +28,23 @@
     "test:unit": "mocha 'test/unit/**/*.test.js'",
     "test:coverage": "nyc npm run test:unit",
     "test:integration": "mocha 'test/integration/**/*.test.js'",
-    "project:verify": "npx --yes @rowanmanning/validate-project --type git node-library",
-    "project:fix": "npx --yes @rowanmanning/validate-project --type git node-library --fix"
+    "project:verify": "npx --yes @rowanmanning/validate-project@2 --type git node-library",
+    "project:fix": "npx --yes @rowanmanning/validate-project@2 --type git node-library --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "http-errors": "^2.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
     "@rowanmanning/eslint-config": "^3.3.0",
     "axios": "^0.26.0",
     "chai": "^4.3.6",
     "eslint": "^8.9.0",
     "express4": "npm:express@^4.17.3",
     "express5": "npm:express@^5.0.0-beta.1",
+    "husky": "^7.0.4",
     "mocha": "^9.2.1",
     "nyc": "^15.1.0",
     "testdouble": "^3.16.4"
