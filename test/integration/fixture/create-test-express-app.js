@@ -31,12 +31,23 @@ module.exports = async function createTestExpressApp(expressModule) {
 	const server = await start(app);
 	const address = `http://localhost:${server.address().port}`;
 
-	// Method to stop the application, required by tests
+	/**
+	 * Stop the application.
+	 */
 	function stop() {
 		server.close();
 	}
 
-	// Method to make a request to the test application
+	/**
+	 * Method to make a request to the test application.
+	 *
+	 * @param {string} method
+	 *     The HTTP method to use.
+	 * @param {string} requestPath
+	 *     The path to make a request to.
+	 * @returns {httpRequest.AxiosResponse}
+	 *     Returns an HTTP response object.
+	 */
 	function makeAppRequest(method, requestPath) {
 		return httpRequest({
 			url: `${address}${requestPath}`,
@@ -47,14 +58,26 @@ module.exports = async function createTestExpressApp(expressModule) {
 		});
 	}
 
-	// Method to make a GET request to the test application,
-	// required by tests
+	/**
+	 * Method to make a GET request to the test application.
+	 *
+	 * @param {string} requestPath
+	 *     The path to make a request to.
+	 * @returns {httpRequest.AxiosResponse}
+	 *     Returns an HTTP response object.
+	 */
 	function get(requestPath) {
 		return makeAppRequest('GET', requestPath);
 	}
 
-	// Method to make a POST request to the test application,
-	// required by tests
+	/**
+	 * Method to make a POST request to the test application.
+	 *
+	 * @param {string} requestPath
+	 *     The path to make a request to.
+	 * @returns {httpRequest.AxiosResponse}
+	 *     Returns an HTTP response object.
+	 */
 	function post(requestPath) {
 		return makeAppRequest('POST', requestPath);
 	}
@@ -67,7 +90,14 @@ module.exports = async function createTestExpressApp(expressModule) {
 	};
 };
 
-// Promisified `app.listen`
+/**
+ * Start the application.
+ *
+ * @param {import('express').Application} app
+ *     The Express application to start.
+ * @returns {Promise<import('http').Server>}
+ *     Returns the started HTTP server.
+ */
 function start(app) {
 	return new Promise((resolve, reject) => {
 		const server = app.listen(undefined, error => {
