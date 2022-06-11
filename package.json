@@ -24,13 +24,15 @@
   },
   "scripts": {
     "test": "npm run test:coverage && npm run test:integration",
-    "verify": "eslint .",
+    "verify": "npm run verify:eslint && npm run verify:types",
     "test:unit": "mocha 'test/unit/**/*.test.js'",
     "test:coverage": "nyc npm run test:unit",
     "test:integration": "mocha 'test/integration/**/*.test.js'",
     "project:verify": "npx --yes @rowanmanning/validate-project@2 --type git node-library",
     "project:fix": "npx --yes @rowanmanning/validate-project@2 --type git node-library --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "verify:eslint": "eslint .",
+    "verify:types": "tsc --noEmit --project ./jsconfig.json"
   },
   "dependencies": {
     "http-errors": "^2.0.0"
@@ -39,6 +41,7 @@
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@rowanmanning/eslint-config": "^4.0.2",
+    "@types/express": "^4.17.13",
     "axios": "^0.27.2",
     "chai": "^4.3.6",
     "eslint": "^8.9.0",
@@ -47,7 +50,8 @@
     "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
-    "testdouble": "^3.16.4"
+    "testdouble": "^3.16.4",
+    "typescript": "^4.7.3"
   },
   "main": "lib/allow-methods.js",
   "nyc": {

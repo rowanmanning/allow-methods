@@ -96,6 +96,19 @@ describe('lib/allow-methods', () => {
 
 			});
 
+			describe('when the allowed methods is not an array', () => {
+
+				it('calls back with a 405 error', done => {
+					request.method = 'FOO';
+					allowMethods({})(request, response, error => {
+						assert.strictEqual(error, error405);
+						td.verify(httpError(405, 'Method Not Allowed'), {times: 1});
+						done();
+					});
+				});
+
+			});
+
 		});
 
 	});
