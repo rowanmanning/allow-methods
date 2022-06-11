@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.1.0](https://github.com/rowanmanning/allow-methods/compare/v4.0.1...v4.1.0) (2022-06-11)
+
+
+### Features
+
+* ensure typescript types are always valid ([0852a0d](https://github.com/rowanmanning/allow-methods/commit/0852a0d088d1ff3760db8186633a00f2129c0e44))
+
+
+### Miscellaneous
+
+* bump @commitlint/cli from 17.0.1 to 17.0.2 ([68db958](https://github.com/rowanmanning/allow-methods/commit/68db958f77bd2dbb086a5fa7239e4fa289591bd5))
+* bump @commitlint/config-conventional from 17.0.0 to 17.0.2 ([572d1b5](https://github.com/rowanmanning/allow-methods/commit/572d1b561df26d720c9af4b4fe40ed2a1e26e758))
+* bump @rowanmanning/eslint-config from 3.5.0 to 4.0.2 ([cc359b5](https://github.com/rowanmanning/allow-methods/commit/cc359b51f906ff26882df69ff0baf8b60ca311fc))
+* bump eslint from 8.16.0 to 8.17.0 ([13b0fa3](https://github.com/rowanmanning/allow-methods/commit/13b0fa367522159dd59500c446b313ddf3218ff2))
+* fix eslint issues ([610f21a](https://github.com/rowanmanning/allow-methods/commit/610f21a324cfa155c917a220ba05cd67ef394ee6))
+
 ### [4.0.1](https://github.com/rowanmanning/allow-methods/compare/v4.0.0...v4.0.1) (2022-05-26)
 
 
