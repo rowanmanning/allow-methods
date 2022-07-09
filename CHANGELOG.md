@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.1](https://github.com/rowanmanning/allow-methods/compare/v4.1.0...v4.1.1) (2022-07-09)
+
+
+### Bug Fixes
+
+* hide the misc changelog section ([ed656dc](https://github.com/rowanmanning/allow-methods/commit/ed656dca114dc71837603bad90962d0c182ce3ec))
+
 ## [4.1.0](https://github.com/rowanmanning/allow-methods/compare/v4.0.1...v4.1.0) (2022-06-11)
 
 
