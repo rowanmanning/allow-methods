@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.2](https://github.com/rowanmanning/allow-methods/compare/v4.1.1...v4.1.2) (2022-11-14)
+
+
+### Bug Fixes
+
+* improve TypeScript compatibility ([721517a](https://github.com/rowanmanning/allow-methods/commit/721517a1cb41dffc22b03b9fd1d755e63496ebfb))
+
 ## [4.1.1](https://github.com/rowanmanning/allow-methods/compare/v4.1.0...v4.1.1) (2022-07-09)
 
 
