@@ -113,5 +113,10 @@ describe('lib/allow-methods', () => {
 
 	});
 
+	describe('.default', () => {
+		it('aliases the module exports', () => {
+			assert.strictEqual(allowMethods, allowMethods.default);
+		});
+	});
 
 });
