@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/rowanmanning/allow-methods/compare/v4.1.3...v5.0.0) (2023-03-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for Node.js 14
+
+### Miscellaneous
+
+* drop support for Node.js 14 ([48c174b](https://github.com/rowanmanning/allow-methods/commit/48c174bf2812617fece3cf4126cd512742275aa3))
+
 ## [4.1.3](https://github.com/rowanmanning/allow-methods/compare/v4.1.2...v4.1.3) (2023-01-08)
 
 
