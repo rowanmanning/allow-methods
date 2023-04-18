@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/rowanmanning/allow-methods/compare/v5.0.0...v5.0.1) (2023-04-18)
+
+
+### Bug Fixes
+
+* add support for Node.js 20 ([195e2b0](https://github.com/rowanmanning/allow-methods/commit/195e2b04057bb68fd559df56fb4aeefb3a4b93db))
+
 ## [5.0.0](https://github.com/rowanmanning/allow-methods/compare/v4.1.3...v5.0.0) (2023-03-25)
 
 
