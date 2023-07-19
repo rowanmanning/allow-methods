@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.2](https://github.com/rowanmanning/allow-methods/compare/v5.0.1...v5.0.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* remove http-errors dependency ([88d7567](https://github.com/rowanmanning/allow-methods/commit/88d756798b41d99a35b33ac1b79f2289d6e2a39d))
+
 ## [5.0.1](https://github.com/rowanmanning/allow-methods/compare/v5.0.0...v5.0.1) (2023-04-18)
 
 
