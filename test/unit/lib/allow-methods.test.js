@@ -1,6 +1,6 @@
 'use strict';
 
-const {assert} = require('chai');
+const assert = require('node:assert');
 const td = require('testdouble');
 
 describe('lib/allow-methods', () => {
@@ -16,13 +16,13 @@ describe('lib/allow-methods', () => {
 	});
 
 	it('is a function', () => {
-		assert.isFunction(allowMethods);
+		assert.strictEqual(typeof allowMethods, 'function');
 	});
 
 	describe('allowMethods(methods)', () => {
 
 		it('returns a function', () => {
-			assert.isFunction(allowMethods());
+			assert.strictEqual(typeof allowMethods(), 'function');
 		});
 
 		describe('middleware(request, response, next)', () => {
@@ -43,7 +43,7 @@ describe('lib/allow-methods', () => {
 				it('does not callback with an error', done => {
 					request.method = 'FOO';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
-						assert.isUndefined(error);
+						assert.strictEqual(error, undefined);
 						done();
 					});
 				});
@@ -51,7 +51,7 @@ describe('lib/allow-methods', () => {
 				it('ignores case in the allowed methods', done => {
 					request.method = 'BAR';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
-						assert.isUndefined(error);
+						assert.strictEqual(error, undefined);
 						done();
 					});
 				});
@@ -59,7 +59,7 @@ describe('lib/allow-methods', () => {
 				it('ignores case in the request method', done => {
 					request.method = 'foo';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
-						assert.isUndefined(error);
+						assert.strictEqual(error, undefined);
 						done();
 					});
 				});
