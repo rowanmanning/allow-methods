@@ -1,6 +1,6 @@
 'use strict';
 
-const {assert} = require('chai');
+const assert = require('node:assert');
 const createTestApp = require('./fixture/create-test-express-app');
 
 describe('Express 4', () => {
@@ -26,7 +26,7 @@ describe('Express 4', () => {
 		});
 
 		it('responds with no "Allow" header', () => {
-			assert.isUndefined(response.headers.allow);
+			assert.strictEqual(response.headers.allow, undefined);
 		});
 
 	});
@@ -60,7 +60,7 @@ describe('Express 4', () => {
 		});
 
 		it('responds with no "Allow" header', () => {
-			assert.isUndefined(response.headers.allow);
+			assert.strictEqual(response.headers.allow, undefined);
 		});
 
 	});
