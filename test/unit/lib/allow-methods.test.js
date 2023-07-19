@@ -5,13 +5,8 @@ const td = require('testdouble');
 
 describe('lib/allow-methods', () => {
 	let allowMethods;
-	let error405;
-	let httpError;
 
 	beforeEach(() => {
-		httpError = td.replace('http-errors', td.func());
-		error405 = {status: 405};
-		td.when(httpError(), {ignoreExtraArgs: true}).thenReturn(error405);
 		allowMethods = require('../../../lib/allow-methods');
 	});
 
@@ -71,8 +66,10 @@ describe('lib/allow-methods', () => {
 				it('calls back with a 405 error', done => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
-						assert.strictEqual(error, error405);
-						td.verify(httpError(405, 'Method Not Allowed'), {times: 1});
+						assert.ok(error instanceof Error);
+						assert.strictEqual(error.status, 405);
+						assert.strictEqual(error.statusCode, 405);
+						assert.strictEqual(error.message, 'Method Not Allowed');
 						done();
 					});
 				});
@@ -80,8 +77,10 @@ describe('lib/allow-methods', () => {
 				it('calls back with a 405 error with a custom message if specified', done => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'], 'mock message')(request, response, error => {
-						assert.strictEqual(error, error405);
-						td.verify(httpError(405, 'mock message'), {times: 1});
+						assert.ok(error instanceof Error);
+						assert.strictEqual(error.status, 405);
+						assert.strictEqual(error.statusCode, 405);
+						assert.strictEqual(error.message, 'mock message');
 						done();
 					});
 				});
@@ -101,8 +100,10 @@ describe('lib/allow-methods', () => {
 				it('calls back with a 405 error', done => {
 					request.method = 'FOO';
 					allowMethods({})(request, response, error => {
-						assert.strictEqual(error, error405);
-						td.verify(httpError(405, 'Method Not Allowed'), {times: 1});
+						assert.ok(error instanceof Error);
+						assert.strictEqual(error.status, 405);
+						assert.strictEqual(error.statusCode, 405);
+						assert.strictEqual(error.message, 'Method Not Allowed');
 						done();
 					});
 				});

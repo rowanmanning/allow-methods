@@ -36,9 +36,6 @@
     "project:fix": "npx --yes @rowanmanning/validate-project@2 --type git node-library --fix",
     "prepare": "husky install"
   },
-  "dependencies": {
-    "http-errors": "^2.0.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
