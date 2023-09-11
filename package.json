@@ -19,7 +19,7 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": "16.x || 18.x || 20.x",
+    "node": "18.x || 20.x",
     "npm": "8.x || 9.x"
   },
   "scripts": {
@@ -32,8 +32,8 @@
     "test:unit": "mocha 'test/unit/**/*.test.js'",
     "test:coverage": "nyc npm run test:unit",
     "test:integration": "mocha 'test/integration/**/*.test.js'",
-    "project:verify": "npx --yes @rowanmanning/validate-project@2 --type git node-library",
-    "project:fix": "npx --yes @rowanmanning/validate-project@2 --type git node-library --fix",
+    "project:verify": "npx --yes @rowanmanning/validate-project@3 --type git node-library",
+    "project:fix": "npx --yes @rowanmanning/validate-project@3 --type git node-library --fix",
     "prepare": "husky install"
   },
   "devDependencies": {
