@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.0.0](https://github.com/rowanmanning/allow-methods/compare/v5.0.2...v6.0.0) (2023-09-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for Node.js 16
+
+### Miscellaneous
+
+* drop support for Node.js 16 ([b02f9a4](https://github.com/rowanmanning/allow-methods/commit/b02f9a478c7ed2e5bbef06285d1e29868bcee709))
+
 ## [5.0.2](https://github.com/rowanmanning/allow-methods/compare/v5.0.1...v5.0.2) (2023-07-19)
 
 
