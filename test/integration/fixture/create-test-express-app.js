@@ -1,6 +1,5 @@
 'use strict';
 
-const httpRequest = require('axios');
 const allowMethods = require('../../..');
 
 module.exports = async function createTestExpressApp(expressModule) {
@@ -45,17 +44,12 @@ module.exports = async function createTestExpressApp(expressModule) {
 	 *     The HTTP method to use.
 	 * @param {string} requestPath
 	 *     The path to make a request to.
-	 * @returns {httpRequest.AxiosResponse}
+	 * @returns {Response}
 	 *     Returns an HTTP response object.
 	 */
 	function makeAppRequest(method, requestPath) {
-		return httpRequest({
-			url: `${address}${requestPath}`,
-			method,
-			validateStatus() {
-				return true;
-			}
-		});
+		const url = new URL(requestPath, address);
+		return fetch(url, {method});
 	}
 
 	/**
@@ -63,7 +57,7 @@ module.exports = async function createTestExpressApp(expressModule) {
 	 *
 	 * @param {string} requestPath
 	 *     The path to make a request to.
-	 * @returns {httpRequest.AxiosResponse}
+	 * @returns {Response}
 	 *     Returns an HTTP response object.
 	 */
 	function get(requestPath) {
@@ -75,7 +69,7 @@ module.exports = async function createTestExpressApp(expressModule) {
 	 *
 	 * @param {string} requestPath
 	 *     The path to make a request to.
-	 * @returns {httpRequest.AxiosResponse}
+	 * @returns {Response}
 	 *     Returns an HTTP response object.
 	 */
 	function post(requestPath) {

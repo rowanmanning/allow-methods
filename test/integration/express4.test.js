@@ -26,7 +26,7 @@ describe('Express 4', () => {
 		});
 
 		it('responds with no "Allow" header', () => {
-			assert.strictEqual(response.headers.allow, undefined);
+			assert.strictEqual(response.headers.get('allow'), null);
 		});
 
 	});
@@ -42,8 +42,8 @@ describe('Express 4', () => {
 			assert.strictEqual(response.status, 405);
 		});
 
-		it('responds with an "Allow" outlining allowed HTTP methods', () => {
-			assert.strictEqual(response.headers.allow, 'GET');
+		it('responds with an "Allow" header outlining allowed HTTP methods', () => {
+			assert.strictEqual(response.headers.get('allow'), 'GET');
 		});
 
 	});
@@ -60,7 +60,7 @@ describe('Express 4', () => {
 		});
 
 		it('responds with no "Allow" header', () => {
-			assert.strictEqual(response.headers.allow, undefined);
+			assert.strictEqual(response.headers.get('allow'), null);
 		});
 
 	});
@@ -76,8 +76,8 @@ describe('Express 4', () => {
 			assert.strictEqual(response.status, 405);
 		});
 
-		it('responds with an "Allow" outlining allowed HTTP methods', () => {
-			assert.strictEqual(response.headers.allow, 'POST');
+		it('responds with an "Allow" header outlining allowed HTTP methods', () => {
+			assert.strictEqual(response.headers.get('allow'), 'POST');
 		});
 
 	});
