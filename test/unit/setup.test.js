@@ -1,5 +1,6 @@
 'use strict';
 
+const {afterEach} = require('node:test');
 const td = require('testdouble');
 
 td.config({

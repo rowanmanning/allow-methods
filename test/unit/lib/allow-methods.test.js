@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('node:assert');
+const {beforeEach, describe, it} = require('node:test');
 const td = require('testdouble');
 
 describe('lib/allow-methods', () => {
@@ -35,7 +36,7 @@ describe('lib/allow-methods', () => {
 
 			describe('when request method is allowed', () => {
 
-				it('does not callback with an error', done => {
+				it('does not callback with an error', (_, done) => {
 					request.method = 'FOO';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
 						assert.strictEqual(error, undefined);
@@ -43,7 +44,7 @@ describe('lib/allow-methods', () => {
 					});
 				});
 
-				it('ignores case in the allowed methods', done => {
+				it('ignores case in the allowed methods', (_, done) => {
 					request.method = 'BAR';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
 						assert.strictEqual(error, undefined);
@@ -51,7 +52,7 @@ describe('lib/allow-methods', () => {
 					});
 				});
 
-				it('ignores case in the request method', done => {
+				it('ignores case in the request method', (_, done) => {
 					request.method = 'foo';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
 						assert.strictEqual(error, undefined);
@@ -63,7 +64,7 @@ describe('lib/allow-methods', () => {
 
 			describe('when request method is not allowed', () => {
 
-				it('calls back with a 405 error', done => {
+				it('calls back with a 405 error', (_, done) => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'])(request, response, error => {
 						assert.ok(error instanceof Error);
@@ -74,7 +75,7 @@ describe('lib/allow-methods', () => {
 					});
 				});
 
-				it('calls back with a 405 error with a custom message if specified', done => {
+				it('calls back with a 405 error with a custom message if specified', (_, done) => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'], 'mock message')(request, response, error => {
 						assert.ok(error instanceof Error);
@@ -85,7 +86,7 @@ describe('lib/allow-methods', () => {
 					});
 				});
 
-				it('sets the response `Allow` header to the allowed methods if the request method is not allowed', done => {
+				it('sets the response `Allow` header to the allowed methods if the request method is not allowed', (_, done) => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'])(request, response, () => {
 						td.verify(response.header('Allow', 'FOO, BAR'), {times: 1});
@@ -97,7 +98,7 @@ describe('lib/allow-methods', () => {
 
 			describe('when the allowed methods is not an array', () => {
 
-				it('calls back with a 405 error', done => {
+				it('calls back with a 405 error', (_, done) => {
 					request.method = 'FOO';
 					allowMethods({})(request, response, error => {
 						assert.ok(error instanceof Error);

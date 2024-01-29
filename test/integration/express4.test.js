@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('node:assert');
+const {after, before, beforeEach, describe, it} = require('node:test');
 const createTestApp = require('./fixture/create-test-express-app');
 
 describe('Express 4', () => {

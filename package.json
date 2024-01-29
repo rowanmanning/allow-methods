@@ -29,9 +29,9 @@
     "verify:eslint": "eslint .",
     "verify:types": "tsc --noEmit --project ./jsconfig.json",
     "test": "npm run test:coverage && npm run test:integration",
-    "test:unit": "mocha 'test/unit/**/*.test.js'",
+    "test:unit": "node --test test/unit",
     "test:coverage": "nyc npm run test:unit",
-    "test:integration": "mocha 'test/integration/**/*.test.js'",
+    "test:integration": "node --test test/integration",
     "project:verify": "npx --yes @rowanmanning/validate-project@3 --type git node-library",
     "project:fix": "npx --yes @rowanmanning/validate-project@3 --type git node-library --fix",
     "prepare": "husky install"
@@ -45,7 +45,6 @@
     "express4": "npm:express@^4.17.3",
     "express5": "npm:express@^5.0.0-beta.1",
     "husky": "^8.0.1",
-    "mocha": "^10.0.0",
     "nyc": "^15.1.0",
     "testdouble": "^3.16.4",
     "typescript": "^5.0.2"
@@ -57,8 +56,5 @@
       "html",
       "text"
     ]
-  },
-  "mocha": {
-    "timeout": 10000
   }
 }
