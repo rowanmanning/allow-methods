@@ -1,14 +1,17 @@
 'use strict';
 
+const {afterEach, beforeEach, describe, it, mock} = require('node:test');
 const assert = require('node:assert');
-const {beforeEach, describe, it} = require('node:test');
-const td = require('testdouble');
 
 describe('lib/allow-methods', () => {
 	let allowMethods;
 
 	beforeEach(() => {
 		allowMethods = require('../../../lib/allow-methods');
+	});
+
+	afterEach(() => {
+		mock.reset();
 	});
 
 	it('is a function', () => {
@@ -30,7 +33,7 @@ describe('lib/allow-methods', () => {
 					method: 'foo'
 				};
 				response = {
-					header: td.func()
+					header: mock.fn()
 				};
 			});
 
@@ -89,7 +92,8 @@ describe('lib/allow-methods', () => {
 				it('sets the response `Allow` header to the allowed methods if the request method is not allowed', (_, done) => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'])(request, response, () => {
-						td.verify(response.header('Allow', 'FOO, BAR'), {times: 1});
+						assert.strictEqual(response.header.mock.callCount(), 1);
+						assert.deepEqual(response.header.mock.calls[0].arguments, ['Allow', 'FOO, BAR']);
 						done();
 					});
 				});
