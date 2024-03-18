@@ -37,7 +37,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.2",
+    "@commitlint/cli": "^19.2.0",
     "@commitlint/config-conventional": "^18.4.2",
     "@rowanmanning/eslint-config": "^8.0.0",
     "@types/express": "^4.17.13",
