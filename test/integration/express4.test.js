@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('node:assert');
-const {after, before, beforeEach, describe, it} = require('node:test');
+const { after, before, beforeEach, describe, it } = require('node:test');
 const createTestApp = require('./fixture/create-test-express-app');
 
 describe('Express 4', () => {
@@ -29,7 +29,6 @@ describe('Express 4', () => {
 		it('responds with no "Allow" header', () => {
 			assert.strictEqual(response.headers.get('allow'), null);
 		});
-
 	});
 
 	describe('POST /get', () => {
@@ -46,7 +45,6 @@ describe('Express 4', () => {
 		it('responds with an "Allow" header outlining allowed HTTP methods', () => {
 			assert.strictEqual(response.headers.get('allow'), 'GET');
 		});
-
 	});
 
 	describe('POST /post', () => {
@@ -63,7 +61,6 @@ describe('Express 4', () => {
 		it('responds with no "Allow" header', () => {
 			assert.strictEqual(response.headers.get('allow'), null);
 		});
-
 	});
 
 	describe('GET /post', () => {
@@ -80,7 +77,5 @@ describe('Express 4', () => {
 		it('responds with an "Allow" header outlining allowed HTTP methods', () => {
 			assert.strictEqual(response.headers.get('allow'), 'POST');
 		});
-
 	});
-
 });
