@@ -9,19 +9,19 @@ module.exports = async function createTestExpressApp(expressModule) {
 	const app = express();
 
 	// Add a route which only allows GET
-	app.all('/get', allowMethods(['GET']), (request, response) => {
+	app.all('/get', allowMethods(['GET']), (_request, response) => {
 		response.status(200);
 		response.send('OK');
 	});
 
 	// Add a route which only allows POST
-	app.all('/post', allowMethods(['POST']), (request, response) => {
+	app.all('/post', allowMethods(['POST']), (_request, response) => {
 		response.status(200);
 		response.send('OK');
 	});
 
 	// eslint-disable-next-line no-unused-vars
-	app.use((error, request, response, next) => {
+	app.use((error, _request, response, _next) => {
 		response.status(error.status || 500);
 		response.send(error.message);
 	});
@@ -49,7 +49,7 @@ module.exports = async function createTestExpressApp(expressModule) {
 	 */
 	function makeAppRequest(method, requestPath) {
 		const url = new URL(requestPath, address);
-		return fetch(url, {method});
+		return fetch(url, { method });
 	}
 
 	/**
@@ -94,7 +94,7 @@ module.exports = async function createTestExpressApp(expressModule) {
  */
 function start(app) {
 	return new Promise((resolve, reject) => {
-		const server = app.listen(undefined, error => {
+		const server = app.listen(undefined, (error) => {
 			if (error) {
 				return reject(error);
 			}
