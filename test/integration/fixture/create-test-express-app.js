@@ -20,7 +20,6 @@ module.exports = async function createTestExpressApp(expressModule) {
 		response.send('OK');
 	});
 
-	// eslint-disable-next-line no-unused-vars
 	app.use((error, _request, response, _next) => {
 		response.status(error.status || 500);
 		response.send(error.message);
