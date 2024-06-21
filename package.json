@@ -32,8 +32,6 @@
     "test:unit": "node --test test/unit",
     "test:coverage": "nyc npm run test:unit",
     "test:integration": "node --test test/integration",
-    "project:verify": "npx --yes @rowanmanning/validate-project@3 --type git node-library",
-    "project:fix": "npx --yes @rowanmanning/validate-project@3 --type git node-library --fix",
     "prepare": "husky"
   },
   "devDependencies": {
