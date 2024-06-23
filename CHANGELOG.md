@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.0](https://github.com/rowanmanning/allow-methods/compare/v6.1.0...v6.2.0) (2024-06-23)
+
+
+### Features
+
+* add Node.js 22 support ([209eb08](https://github.com/rowanmanning/allow-methods/commit/209eb0863d9b0ae02e6a02613ed3f4985ee0576e))
+
 ## [6.1.0](https://github.com/rowanmanning/allow-methods/compare/v6.0.0...v6.1.0) (2024-01-30)
 
 
