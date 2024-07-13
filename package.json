@@ -31,7 +31,7 @@
     "test:unit": "cd test/unit && node --test",
     "test:coverage": "nyc npm run test:unit",
     "test:integration": "cd test/integration && node --test",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
