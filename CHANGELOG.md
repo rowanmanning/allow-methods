@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.1](https://github.com/rowanmanning/allow-methods/compare/v6.2.0...v6.2.1) (2024-07-27)
+
+
+### Bug Fixes
+
+* prevent husky from failing ([6514250](https://github.com/rowanmanning/allow-methods/commit/6514250cb10d52b12e6fc4f28c86716a05ff70b3))
+
 ## [6.2.0](https://github.com/rowanmanning/allow-methods/compare/v6.1.0...v6.2.0) (2024-06-23)
 
 
