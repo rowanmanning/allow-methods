@@ -8,4 +8,5 @@ CHANGELOG.md
 biome.json
 coverage
 docs
+jsconfig.json
 test
