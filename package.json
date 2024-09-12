@@ -26,7 +26,7 @@
     "verify:biome": "biome check",
     "build": "npm run build:types",
     "build:types": "tsc --noEmit false --emitDeclarationOnly --project ./jsconfig.json",
-    "verify:types": "tsc --noEmit --project ./jsconfig.json",
+    "verify:types": "tsc --project ./jsconfig.json",
     "test": "npm run test:coverage && npm run test:integration",
     "test:unit": "cd test/unit && node --test",
     "test:coverage": "nyc npm run test:unit",
