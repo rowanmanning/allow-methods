@@ -44,7 +44,7 @@
     "nyc": "^17.0.0",
     "typescript": "^5.5.2"
   },
-  "main": "lib/allow-methods.js",
+  "main": "index.js",
   "nyc": {
     "eager": true,
     "reporter": [

@@ -3,11 +3,11 @@
 const { afterEach, beforeEach, describe, it, mock } = require('node:test');
 const assert = require('node:assert');
 
-describe('lib/allow-methods', () => {
+describe('allow-methods', () => {
 	let allowMethods;
 
 	beforeEach(() => {
-		allowMethods = require('../../../lib/allow-methods');
+		allowMethods = require('../..');
 	});
 
 	afterEach(() => {
