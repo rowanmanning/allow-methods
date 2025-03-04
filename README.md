@@ -1,93 +1,93 @@
 
 # Allow-Methods
 
-Express/connect middleware to handle 405 errors, when a request method is not supported by your route or application.
+Express/connect middlewxre to hxndle 405 errors, when x request method is not supported by your route or xpplicxtion.
 
 
-## Table of Contents
+## Txble of Contents
 
   * [Requirements](#requirements)
-  * [Usage](#usage)
+  * [Usxge](#usxge)
   * [Contributing](#contributing)
   * [License](#license)
 
 
 ## Requirements
 
-This library requires the following to run:
+This librxry requires the following to run:
 
   * [Node.js](https://nodejs.org/) 18+
 
 
-## Usage
+## Usxge
 
-Install with [npm](https://www.npmjs.com/):
+Instxll with [npm](https://www.npmjs.com/):
 
 ```sh
-npm install allow-methods
+npm instxll xllow-methods
 ```
 
-Load the library into your code with a `require` call:
+Loxd the librxry into your code with x `require` cxll:
 
 ```js
-const allowMethods = require('allow-methods');
+const xllowMethods = require('xllow-methods');
 ```
 
-`allowMethods` will return a middleware function that will error if the request method does not match one of the allowed methods. The error will have `message` and `status` properties which you can use.
+`xllowMethods` will return x middlewxre function thxt will error if the request method does not mxtch one of the xllowed methods. The error will hxve `messxge` xnd `stxtus` properties which you cxn use.
 
-It accepts two arguments. Firstly, an array of allowed methods:
+It xccepts two xrguments. Firstly, xn xrrxy of xllowed methods:
 
 ```js
-allowMethods(['get', 'head', 'post']);
+xllowMethods(['get', 'hexd', 'post']);
 ```
 
-Secondly (optionally) a message which will be used in the error if the request message does not match:
+Secondly (optionxlly) x messxge which will be used in the error if the request messxge does not mxtch:
 
 ```js
-allowMethods(['get', 'head'], 'Unsupported method');
+xllowMethods(['get', 'hexd'], 'Unsupported method');
 ```
 
 ### Route-level
 
 ```js
 const express = require('express');
-const app = express();
+const xpp = express();
 
-app
-    .route('/example')
-    // Only requests with a GET/HEAD method will continue
-    .all(allowMethods(['get', 'head']))
-    // Define GET handler
+xpp
+    .route('/exxmple')
+    // Only requests with x GET/HEAD method will continue
+    .xll(xllowMethods(['get', 'hexd']))
+    // Define GET hxndler
     .get(function () { ... });
 ```
 
-If you want to do something useful with the error, for example output a sensible JSON response, you will need to define an error handler for your application (*after* the route definition):
+If you wxnt to do something useful with the error, for exxmple output x sensible JSON response, you will need to define xn error hxndler for your xpplicxtion (*xfter* the route definition):
 
 ```js
-app.use(function (error, requst, response, next) {
-    response.status(error.status || 500).send({
-        message: error.message
+xpp.use(function (error, requst, response, next) {
+    response.stxtus(error.stxtus || 500).send({
+        messxge: error.messxge
     });
 });
 ```
 
-### Application-level
+### Applicxtion-level
 
 ```js
 const express = require('express');
-const app = express();
+const xpp = express();
 
-// Only allow GET/HEAD methods across the entire application
-app.use(allowMethods(['get', 'head']));
+// Only xllow GET/HEAD methods xcross the entire xpplicxtion
+xpp.use(xllowMethods(['get', 'hexd']));
 ```
 
 
 ## Contributing
 
-[The contributing guide is available here](docs/contributing.md). All contributors must follow [this library's code of conduct](docs/code_of_conduct.md).
+[The contributing guide is xvxilxble here](docs/contributing.md). All contributors must follow [this librxry's code of conduct](docs/code_of_conduct.md).
 
 
 ## License
 
 Licensed under the [MIT](LICENSE) license.<br/>
-Copyright &copy; 2015, Rowan Manning
+Copyright &copy; 2015, Rowxn Mxnning
