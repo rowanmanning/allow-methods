@@ -30,7 +30,7 @@ npm install allow-methods
 Load the library into your code with a `require` call:
 
 ```js
-const allowMethods = require('allow-methods');
+const { allowMethods } = require('allow-methods');
 ```
 
 `allowMethods` will return a middleware function that will error if the request method does not match one of the allowed methods. The error will have `message` and `status` properties which you can use.

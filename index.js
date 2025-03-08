@@ -25,7 +25,7 @@ class MethodNotAllowedError extends Error {
  * @returns {import('express').Handler}
  *     Returns a middleware function.
  */
-function allowMethods(methods = [], message = 'Method Not Allowed') {
+exports.allowMethods = function allowMethods(methods = [], message = 'Method Not Allowed') {
 	const normalizedMethods = normalizeAllowedMethods(methods);
 	return (request, response, next) => {
 		if (!normalizedMethods.includes(request.method.toUpperCase())) {
@@ -34,7 +34,7 @@ function allowMethods(methods = [], message = 'Method Not Allowed') {
 		}
 		next();
 	};
-}
+};
 
 /**
  * Normalise an array of HTTP methods.
@@ -53,7 +53,3 @@ function normalizeAllowedMethods(methods) {
 		.filter((method) => typeof method === 'string')
 		.map((method) => method.toUpperCase());
 }
-
-/** @type {typeof allowMethods} */
-module.exports = allowMethods;
-module.exports.default = module.exports;

@@ -22,6 +22,23 @@ This document outlines how to migrate to new major breaking versions of this lib
 
 The library now only supports Node.js v20 and above.
 
+### Switch to named exports
+
+We've moved away from using a default export for the `allowMethods` function. It's now a named export. You'll need to update your imports:
+
+```diff
+- const allowMethods = require('@rowanmanning/allow-methods');
++ const { allowMethods } = require('@rowanmanning/allow-methods');
+```
+
+or
+
+```diff
+- import allowMethods from '@rowanmanning/allow-methods';
++ import { allowMethods } from '@rowanmanning/allow-methods';
+```
+
+
 ## Migrating from v5 to v6
 
 ### Dropped Node.js v16 support
