@@ -24,8 +24,6 @@
   "scripts": {
     "verify": "npm run verify:biome && npm run verify:types",
     "verify:biome": "biome check",
-    "build": "npm run build:types",
-    "build:types": "tsc --noEmit false --emitDeclarationOnly --project ./jsconfig.json",
     "verify:types": "tsc --project ./jsconfig.json",
     "test": "npm run test:coverage && npm run test:integration",
     "test:unit": "cd test/unit && node --test",
@@ -45,6 +43,7 @@
     "typescript": "^5.5.2"
   },
   "main": "index.js",
+  "types": "index.d.ts",
   "nyc": {
     "eager": true,
     "reporter": [

@@ -1,5 +1,3 @@
-*.d.ts
-*.d.ts.map
 .nyc_output
 coverage
 node_modules

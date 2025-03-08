@@ -1,6 +1,6 @@
 'use strict';
 
-const allowMethods = require('../../..');
+const { allowMethods } = require('../../..');
 
 module.exports = async function createTestExpressApp(expressModule) {
 	const express = require(expressModule);

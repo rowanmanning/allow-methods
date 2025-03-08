@@ -7,7 +7,7 @@ describe('allow-methods', () => {
 	let allowMethods;
 
 	beforeEach(() => {
-		allowMethods = require('../..');
+		allowMethods = require('../..').allowMethods;
 	});
 
 	afterEach(() => {
@@ -110,12 +110,6 @@ describe('allow-methods', () => {
 					});
 				});
 			});
-		});
-	});
-
-	describe('.default', () => {
-		it('aliases the module exports', () => {
-			assert.strictEqual(allowMethods, allowMethods.default);
 		});
 	});
 });
