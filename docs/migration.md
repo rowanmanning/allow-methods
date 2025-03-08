@@ -5,6 +5,7 @@ This document outlines how to migrate to new major breaking versions of this lib
 
 * [Migrating from v6 to v7](#migrating-from-v6-to-v7)
   * [Dropped Node.js v18 support](#dropped-nodejs-v18-support)
+  * [Switch to named exports](#switch-to-named-exports)
 * [Migrating from v5 to v6](#migrating-from-v5-to-v6)
   * [Dropped Node.js v16 support](#dropped-nodejs-v16-support)
 * [Migrating from v4 to v5](#migrating-from-v4-to-v5)
