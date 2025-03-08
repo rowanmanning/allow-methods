@@ -28,15 +28,15 @@ The library now only supports Node.js v20 and above.
 We've moved away from using a default export for the `allowMethods` function. It's now a named export. You'll need to update your imports:
 
 ```diff
-- const allowMethods = require('@rowanmanning/allow-methods');
-+ const { allowMethods } = require('@rowanmanning/allow-methods');
+- const allowMethods = require('allow-methods');
++ const { allowMethods } = require('allow-methods');
 ```
 
 or
 
 ```diff
-- import allowMethods from '@rowanmanning/allow-methods';
-+ import { allowMethods } from '@rowanmanning/allow-methods';
+- import allowMethods from 'allow-methods';
++ import { allowMethods } from 'allow-methods';
 ```
 
 
