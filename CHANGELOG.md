@@ -1,5 +1,22 @@
 # Changelog
 
+## [7.0.0](https://github.com/rowanmanning/allow-methods/compare/v6.2.1...v7.0.0) (2025-03-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch away from default exports
+* drop Node.js 18
+
+### Miscellaneous Chores
+
+* drop Node.js 18 ([6590f14](https://github.com/rowanmanning/allow-methods/commit/6590f146dc33026ccd1621987a7449a7c086c3ba))
+
+
+### Code Refactoring
+
+* switch away from default exports ([21ca229](https://github.com/rowanmanning/allow-methods/commit/21ca2295bc35566463666a9024b9035d7d9ebe94))
+
 ## [6.2.1](https://github.com/rowanmanning/allow-methods/compare/v6.2.0...v6.2.1) (2024-07-27)
 
 
