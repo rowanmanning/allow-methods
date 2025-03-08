@@ -3,13 +3,13 @@
 
 Express/connect middleware to handle 405 errors, when a request method is not supported by your route or application.
 
-
-## Table of Contents
-
-  * [Requirements](#requirements)
-  * [Usage](#usage)
-  * [Contributing](#contributing)
-  * [License](#license)
+* [Requirements](#requirements)
+* [Usage](#usage)
+  * [Route-level](#route-level)
+  * [Application-level](#application-level)
+* [Migration](#migration)
+* [Contributing](#contributing)
+* [License](#license)
 
 
 ## Requirements
@@ -80,6 +80,11 @@ const app = express();
 // Only allow GET/HEAD methods across the entire application
 app.use(allowMethods(['get', 'head']));
 ```
+
+
+## Migration
+
+A new major version of this project is released if breaking changes are introduced. We maintain a [migration guide](docs/migration.md) to help users migrate between these versions.
 
 
 ## Contributing
