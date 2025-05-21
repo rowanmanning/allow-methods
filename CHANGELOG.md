@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.1.0](https://github.com/rowanmanning/allow-methods/compare/v7.0.0...v7.1.0) (2025-05-21)
+
+
+### Features
+
+* add Node.js 24 support ([b2f1d7c](https://github.com/rowanmanning/allow-methods/commit/b2f1d7c65d435974f66c4f4e125361027e3ee6a1))
+
 ## [7.0.0](https://github.com/rowanmanning/allow-methods/compare/v6.2.1...v7.0.0) (2025-03-08)
 
 
