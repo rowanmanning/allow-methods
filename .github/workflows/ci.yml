@@ -15,6 +15,6 @@ jobs:
   ci:
     uses: rowanmanning/actions/.github/workflows/node-package-single.yml@v4
     with:
-      nodeVersions: '[24, 22, 20]'
+      nodeVersions: '[24, 22]'
     secrets:
       githubToken: ${{ secrets.RELEASE_TOKEN }}

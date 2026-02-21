@@ -3,6 +3,8 @@
 
 This document outlines how to migrate to new major breaking versions of this library. We cover each major version in a separate section.
 
+* [Migrating from v7 to v8](#migrating-from-v7-to-v8)
+  * [Dropped Node.js v20 support](#dropped-nodejs-v20-support)
 * [Migrating from v6 to v7](#migrating-from-v6-to-v7)
   * [Dropped Node.js v18 support](#dropped-nodejs-v18-support)
   * [Switch to named exports](#switch-to-named-exports)
@@ -16,6 +18,12 @@ This document outlines how to migrate to new major breaking versions of this lib
   * [Dropped Node.js v6–10 support](#dropped-nodejs-v610-support)
 * [Migrating from v1 to v2](#migrating-from-v1-to-v2)
   * [Dropped Node.js v0.8–0.12 support](#dropped-nodejs-v08012-support)
+
+## Migrating from v7 to v8
+
+### Dropped Node.js v20 support
+
+The library now only supports Node.js v22 and above.
 
 ## Migrating from v6 to v7
 
