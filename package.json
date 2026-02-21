@@ -19,16 +19,15 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": "20.x || 22.x || 24.x"
+    "node": "22.x || 24.x"
   },
   "scripts": {
     "verify": "npm run verify:biome && npm run verify:types",
     "verify:biome": "biome check",
     "verify:types": "tsc --project ./jsconfig.json",
-    "test": "npm run test:coverage && npm run test:integration",
-    "test:unit": "cd test/unit && node --test",
-    "test:coverage": "nyc npm run test:unit",
-    "test:integration": "cd test/integration && node --test",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "node --test --experimental-test-coverage --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-lines=100 test/unit/**/*.test.js",
+    "test:integration": "node --test test/integration/**/*.test.js",
     "prepare": "husky || true"
   },
   "devDependencies": {
@@ -39,16 +38,12 @@
     "express4": "npm:express@^4.21.0",
     "express5": "npm:express@^5.0.0",
     "husky": "^9.0.7",
-    "nyc": "^17.0.0",
     "typescript": "^5.5.2"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
-  "nyc": {
-    "eager": true,
-    "reporter": [
-      "html",
-      "text"
-    ]
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
   }
 }
