@@ -1,10 +1,12 @@
 name: Enforce commit style
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     branches: [ main ]
 
 jobs:
   enforce:
-    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v3
-
+    uses: rowanmanning/actions/.github/workflows/enforce-commit-style.yml@v4
