@@ -1,10 +1,8 @@
 .commitlintrc.json
 .github
 .husky
-.nyc_output
 CHANGELOG.md
 biome.json
-coverage
 docs
 jsconfig.json
 test

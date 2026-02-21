@@ -1,6 +1,6 @@
 'use strict';
 
-const { afterEach, beforeEach, describe, it, mock } = require('node:test');
+const { beforeEach, describe, it, mock } = require('node:test');
 const assert = require('node:assert');
 
 describe('allow-methods', () => {
@@ -8,10 +8,6 @@ describe('allow-methods', () => {
 
 	beforeEach(() => {
 		allowMethods = require('../..').allowMethods;
-	});
-
-	afterEach(() => {
-		mock.reset();
 	});
 
 	it('is a function', () => {
