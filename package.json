@@ -39,7 +39,7 @@
     "express4": "npm:express@^4.21.0",
     "express5": "npm:express@^5.0.0",
     "husky": "^9.0.7",
-    "nyc": "^17.0.0",
+    "nyc": "^18.0.0",
     "typescript": "^5.5.2"
   },
   "main": "index.js",
