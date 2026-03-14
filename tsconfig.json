@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"erasableSyntaxOnly": true,
+		"lib": ["ES2023"],
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"noImplicitOverride": true,
+		"outDir": "dist",
+		"rewriteRelativeImportExtensions": true,
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"target": "ES2023",
+		"types": ["express", "node"],
+		"useUnknownInCatchVariables": true,
+		"verbatimModuleSyntax": true
+	},
+	"exclude": ["dist", "test"]
+}

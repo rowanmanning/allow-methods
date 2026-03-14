@@ -1,12 +1,12 @@
 import assert from 'node:assert';
 import { after, before, beforeEach, describe, it } from 'node:test';
-import createTestApp from './fixture/create-test-express-app.js';
+import createTestApp from './fixture/create-test-express-app.ts';
 
-describe('Express 5', () => {
-	let app;
+describe('Express 4', () => {
+	let app: Awaited<ReturnType<typeof createTestApp>>;
 
 	before(async () => {
-		app = await createTestApp('express5');
+		app = await createTestApp('express4');
 	});
 
 	after(() => {
@@ -14,7 +14,7 @@ describe('Express 5', () => {
 	});
 
 	describe('GET /get', () => {
-		let response;
+		let response: Response;
 
 		beforeEach(async () => {
 			response = await app.get('/get');
@@ -30,7 +30,7 @@ describe('Express 5', () => {
 	});
 
 	describe('POST /get', () => {
-		let response;
+		let response: Response;
 
 		beforeEach(async () => {
 			response = await app.post('/get');
@@ -46,7 +46,7 @@ describe('Express 5', () => {
 	});
 
 	describe('POST /post', () => {
-		let response;
+		let response: Response;
 
 		beforeEach(async () => {
 			response = await app.post('/post');
@@ -62,7 +62,7 @@ describe('Express 5', () => {
 	});
 
 	describe('GET /post', () => {
-		let response;
+		let response: Response;
 
 		beforeEach(async () => {
 			response = await app.get('/post');
