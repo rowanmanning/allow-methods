@@ -23,28 +23,31 @@
     "node": "22.x || 24.x"
   },
   "scripts": {
-    "verify": "npm run verify:biome && npm run verify:types",
-    "verify:biome": "biome check",
-    "verify:types": "tsc --project ./jsconfig.json",
+    "build": "rm -rf dist && tsc",
+    "verify": "biome check",
     "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "node --test --experimental-test-coverage --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-lines=100 test/unit/**/*.test.js",
-    "test:integration": "node --test test/integration/**/*.test.js",
+    "test:unit": "node --test --experimental-test-coverage --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-lines=100 'test/unit/**/*.test.ts'",
+    "test:integration": "node --test 'test/integration/**/*.test.ts'",
     "prepare": "husky || true"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
-    "@rowanmanning/biome-config": "^3.0.1",
+    "@rowanmanning/biome-config": "^3.1.0",
     "@types/express": "^5.0.0",
+    "@types/node": "^25.5.0",
     "express4": "npm:express@^4.21.0",
     "express5": "npm:express@^5.0.0",
     "husky": "^9.0.7",
-    "typescript": "^5.5.2"
+    "typescript": "^6.0.1-rc"
   },
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
