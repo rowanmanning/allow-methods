@@ -4,7 +4,7 @@
 		"declaration": true,
 		"declarationMap": true,
 		"maxNodeModuleJsDepth": 0,
-		"module": "CommonJS",
+		"module": "nodenext",
 		"noEmit": true,
 		"noImplicitOverride": true,
 		"removeComments": true,
