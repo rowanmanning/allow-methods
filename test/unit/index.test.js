@@ -1,13 +1,11 @@
-'use strict';
-
-const { beforeEach, describe, it, mock } = require('node:test');
-const assert = require('node:assert');
+import assert from 'node:assert';
+import { beforeEach, describe, it, mock } from 'node:test';
 
 describe('allow-methods', () => {
 	let allowMethods;
 
-	beforeEach(() => {
-		allowMethods = require('../..').allowMethods;
+	beforeEach(async () => {
+		allowMethods = (await import('../../index.js')).allowMethods;
 	});
 
 	it('is a function', () => {

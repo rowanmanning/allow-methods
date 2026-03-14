@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @import { allowMethods } from '.'
  */
@@ -14,7 +12,7 @@ class MethodNotAllowedError extends Error {
 /**
  * @type {allowMethods}
  */
-exports.allowMethods = function allowMethods(methods = [], message = 'Method Not Allowed') {
+export function allowMethods(methods = [], message = 'Method Not Allowed') {
 	const normalizedMethods = normalizeAllowedMethods(methods);
 	return (request, response, next) => {
 		if (!normalizedMethods.includes(request.method.toUpperCase())) {
@@ -23,7 +21,7 @@ exports.allowMethods = function allowMethods(methods = [], message = 'Method Not
 		}
 		next();
 	};
-};
+}
 
 /**
  * @param {string[]} methods

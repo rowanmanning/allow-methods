@@ -1,9 +1,7 @@
-'use strict';
+import { allowMethods } from '../../../index.js';
 
-const { allowMethods } = require('../../..');
-
-module.exports = async function createTestExpressApp(expressModule) {
-	const express = require(expressModule);
+export default async function createTestExpressApp(expressModule) {
+	const { default: express } = await import(expressModule);
 
 	// Create an Express app
 	const app = express();
@@ -81,7 +79,7 @@ module.exports = async function createTestExpressApp(expressModule) {
 		post,
 		stop
 	};
-};
+}
 
 /**
  * Start the application.

@@ -25,6 +25,10 @@ This document outlines how to migrate to new major breaking versions of this lib
 
 The library now only supports Node.js v22 and above.
 
+### Publish ECMAScript Modules
+
+The library is now published as native ECMAScript modules.
+
 ## Migrating from v6 to v7
 
 ### Dropped Node.js v18 support

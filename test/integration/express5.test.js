@@ -1,8 +1,6 @@
-'use strict';
-
-const assert = require('node:assert');
-const { after, before, beforeEach, describe, it } = require('node:test');
-const createTestApp = require('./fixture/create-test-express-app');
+import assert from 'node:assert';
+import { after, before, beforeEach, describe, it } from 'node:test';
+import createTestApp from './fixture/create-test-express-app.js';
 
 describe('Express 5', () => {
 	let app;
