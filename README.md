@@ -33,7 +33,7 @@ Import the library into your code:
 import { allowMethods } from 'allow-methods';
 ```
 
-`allowMethods` will return a middleware function that will error if the request method does not match one of the allowed methods. The error will have `message` and `status` properties which you can use.
+`allowMethods` will return a middleware function that will error if the request method does not match one of the allowed methods. The error will have `message` and `status` properties that you can use in your error handling middleware.
 
 It accepts two arguments. Firstly, an array of allowed methods:
 
