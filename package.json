@@ -1,6 +1,7 @@
 {
   "name": "allow-methods",
   "version": "7.1.0",
+  "type": "module",
   "description": "Express/connect middleware to handle 405 errors",
   "keywords": [
     "405",
@@ -19,36 +20,34 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": "20.x || 22.x || 24.x"
+    "node": "22.x || 24.x"
   },
   "scripts": {
-    "verify": "npm run verify:biome && npm run verify:types",
-    "verify:biome": "biome check",
-    "verify:types": "tsc --project ./jsconfig.json",
-    "test": "npm run test:coverage && npm run test:integration",
-    "test:unit": "cd test/unit && node --test",
-    "test:coverage": "nyc npm run test:unit",
-    "test:integration": "cd test/integration && node --test",
+    "build": "rm -rf dist && tsc",
+    "verify": "biome check",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "node --test --experimental-test-coverage --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-lines=100 'test/unit/**/*.test.ts'",
+    "test:integration": "node --test 'test/integration/**/*.test.ts'",
     "prepare": "husky || true"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
-    "@rowanmanning/biome-config": "^3.0.1",
+    "@rowanmanning/biome-config": "^3.1.0",
     "@types/express": "^5.0.0",
+    "@types/node": "^25.5.0",
     "express4": "npm:express@^4.21.0",
     "express5": "npm:express@^5.0.0",
     "husky": "^9.0.7",
-    "nyc": "^17.0.0",
-    "typescript": "^5.5.2"
+    "typescript": "^6.0.1-rc"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
-  "nyc": {
-    "eager": true,
-    "reporter": [
-      "html",
-      "text"
-    ]
-  }
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ]
 }
