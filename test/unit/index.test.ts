@@ -1,19 +1,10 @@
-'use strict';
+// biome-ignore-all lint/suspicious/noExplicitAny: allowed in test mocks
+import assert from 'node:assert';
+import { beforeEach, describe, it, mock } from 'node:test';
 
-const { afterEach, beforeEach, describe, it, mock } = require('node:test');
-const assert = require('node:assert');
+const { allowMethods, MethodNotAllowedError } = await import('../../index.ts');
 
 describe('allow-methods', () => {
-	let allowMethods;
-
-	beforeEach(() => {
-		allowMethods = require('../..').allowMethods;
-	});
-
-	afterEach(() => {
-		mock.reset();
-	});
-
 	it('is a function', () => {
 		assert.strictEqual(typeof allowMethods, 'function');
 	});
@@ -24,8 +15,8 @@ describe('allow-methods', () => {
 		});
 
 		describe('middleware(request, response, next)', () => {
-			let request;
-			let response;
+			let request: any;
+			let response: any;
 
 			beforeEach(() => {
 				request = {
@@ -66,7 +57,7 @@ describe('allow-methods', () => {
 				it('calls back with a 405 error', (_, done) => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'])(request, response, (error) => {
-						assert.ok(error instanceof Error);
+						assert.ok(error instanceof MethodNotAllowedError);
 						assert.strictEqual(error.status, 405);
 						assert.strictEqual(error.statusCode, 405);
 						assert.strictEqual(error.message, 'Method Not Allowed');
@@ -77,7 +68,7 @@ describe('allow-methods', () => {
 				it('calls back with a 405 error with a custom message if specified', (_, done) => {
 					request.method = 'BAZ';
 					allowMethods(['FOO', 'bar'], 'mock message')(request, response, (error) => {
-						assert.ok(error instanceof Error);
+						assert.ok(error instanceof MethodNotAllowedError);
 						assert.strictEqual(error.status, 405);
 						assert.strictEqual(error.statusCode, 405);
 						assert.strictEqual(error.message, 'mock message');
@@ -101,8 +92,9 @@ describe('allow-methods', () => {
 			describe('when the allowed methods is not an array', () => {
 				it('calls back with a 405 error', (_, done) => {
 					request.method = 'FOO';
+					// @ts-expect-error we're breaking the types to allow for runtime checks
 					allowMethods({})(request, response, (error) => {
-						assert.ok(error instanceof Error);
+						assert.ok(error instanceof MethodNotAllowedError);
 						assert.strictEqual(error.status, 405);
 						assert.strictEqual(error.statusCode, 405);
 						assert.strictEqual(error.message, 'Method Not Allowed');

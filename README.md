@@ -16,7 +16,7 @@ Express/connect middleware to handle 405 errors, when a request method is not su
 
 This library requires the following to run:
 
-  * [Node.js](https://nodejs.org/) 20+
+  * [Node.js](https://nodejs.org/) 22+
 
 
 ## Usage
@@ -27,13 +27,13 @@ Install with [npm](https://www.npmjs.com/):
 npm install allow-methods
 ```
 
-Load the library into your code with a `require` call:
+Import the library into your code:
 
 ```js
-const { allowMethods } = require('allow-methods');
+import { allowMethods } from 'allow-methods';
 ```
 
-`allowMethods` will return a middleware function that will error if the request method does not match one of the allowed methods. The error will have `message` and `status` properties which you can use.
+`allowMethods` will return a middleware function that will error if the request method does not match one of the allowed methods. The error will have `message` and `status` properties that you can use in your error handling middleware.
 
 It accepts two arguments. Firstly, an array of allowed methods:
 
@@ -50,7 +50,8 @@ allowMethods(['get', 'head'], 'Unsupported method');
 ### Route-level
 
 ```js
-const express = require('express');
+import express from 'express';
+
 const app = express();
 
 app
@@ -74,7 +75,8 @@ app.use(function (error, requst, response, next) {
 ### Application-level
 
 ```js
-const express = require('express');
+import express from 'express';
+
 const app = express();
 
 // Only allow GET/HEAD methods across the entire application
