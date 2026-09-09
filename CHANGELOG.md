@@ -1,5 +1,30 @@
 # Changelog
 
+## [8.0.0](https://github.com/rowanmanning/allow-methods/compare/v7.1.0...v8.0.0) (2026-09-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch to ESM
+* switch to exports
+* drop Node.js 20
+
+### Bug Fixes
+
+* publish TypeScript files for sourcemaps ([3e34dcc](https://github.com/rowanmanning/allow-methods/commit/3e34dccf109eb366aa44f94cd1e89ae194baed50))
+* re-add `main` and `types` properties ([35a70c5](https://github.com/rowanmanning/allow-methods/commit/35a70c5211b69f4b1b707feb8e6bde7835821fd6))
+
+
+### Miscellaneous Chores
+
+* drop Node.js 20 ([d172275](https://github.com/rowanmanning/allow-methods/commit/d172275399116763ca7c8e57c9021fbbbb941239))
+* switch to exports ([ac52b2c](https://github.com/rowanmanning/allow-methods/commit/ac52b2c7d7b80b9490ac1df9b7e7b23de075bbd6))
+
+
+### Code Refactoring
+
+* switch to ESM ([4e8980d](https://github.com/rowanmanning/allow-methods/commit/4e8980d0ed878d7ea71b81715b800728fa07d41e))
+
 ## [7.1.0](https://github.com/rowanmanning/allow-methods/compare/v7.0.0...v7.1.0) (2025-05-21)
 
 
