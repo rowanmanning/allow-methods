@@ -20,7 +20,7 @@
   "bugs": "https://github.com/rowanmanning/allow-methods/issues",
   "license": "MIT",
   "engines": {
-    "node": "22.x || 24.x"
+    "node": "22.x || 24.x || 26.x"
   },
   "scripts": {
     "build": "rm -rf dist && tsc",
