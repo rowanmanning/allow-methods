@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.1.0](https://github.com/rowanmanning/allow-methods/compare/v8.0.0...v8.1.0) (2026-09-11)
+
+
+### Features
+
+* add Node.js 26 support ([a083a1a](https://github.com/rowanmanning/allow-methods/commit/a083a1a222a2aa5ab2af01b2a4d75c4984d9ea2e))
+
 ## [8.0.0](https://github.com/rowanmanning/allow-methods/compare/v7.1.0...v8.0.0) (2026-09-09)
 
 
